@@ -1,10 +1,1 @@
-**/config/**.js
-*/config/**.js
-*/config/*.js
-./config/*.js
-./config/*
-./config
-config/
 config/database.js
-*/config/database.js
-**/config/database.js
