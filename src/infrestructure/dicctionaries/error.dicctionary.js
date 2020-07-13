@@ -13,5 +13,10 @@ export default {
         "code": "internal_server_error",
         "message": "internal server error",
         "severity": "HIGH"
-    }
+    },
+    "bad_request": {
+        "code": "bad_request",
+        "message": "bad_request server error",
+        "severity": "LOW"
+    },
 }

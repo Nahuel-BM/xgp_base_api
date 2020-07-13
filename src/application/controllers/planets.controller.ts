@@ -11,11 +11,20 @@ async function getPlanetsByUserId(req: Request, res: Response) {
 }
 
 async function getPlanetByUserIdAndPlanetId(req: Request, res: Response) {
-  let userID = req.params.user_id;
-  let planetID = req.params.planet_id;
+  let userID = Number(req.params.user_id);
+  let planetID = Number(req.params.planet_id);
+
+  if (isNaN(userID) || isNaN(planetID)) {
+    throw new Error("bad_request");
+  }
 
   let data = await getPlanet(planetID, userID);
-  res.status(200).send(data);
+
+  if (data.length === 0) {
+    throw new Error("forbidden");
+  } else {
+    res.status(200).send(data[0]);
+  }
 }
 
 export { getPlanetsByUserId, getPlanetByUserIdAndPlanetId };
