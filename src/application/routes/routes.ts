@@ -13,6 +13,10 @@ import {
 } from "../controllers/research.controller.ts";
 
 import {
+  getBuildingsByUserIdAndPlanetId,
+} from "../controllers/buildings.controller.ts";
+
+import {
   validateToken,
   validateUser,
 } from "../../infrestructure/middleware/token.middleware.ts";
@@ -51,6 +55,14 @@ router.get(
   validateUser,
   validateOwnership,
   getDefensesByUserIdAndPlanetId,
+);
+
+router.get(
+  "/:user_id/planets/:planet_id/building",
+  validateToken,
+  validateUser,
+  validateOwnership,
+  getBuildingsByUserIdAndPlanetId,
 );
 
 export { router };
