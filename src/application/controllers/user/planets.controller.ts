@@ -1,8 +1,8 @@
-import { Request, Response } from "../../../deps.ts";
+import { Request, Response } from "../../../../deps.ts";
 import {
   getAllPlanetsByUserId,
   getPlanet,
-} from "../../domain/planet/planet.repository.ts";
+} from "../../../domain/user/planet/repository.ts";
 
 async function getPlanetsByUserId(req: Request, res: Response) {
   let userID = req.params.user_id;

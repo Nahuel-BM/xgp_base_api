@@ -1,7 +1,7 @@
-import { Request, Response } from "../../../deps.ts";
+import { Request, Response } from "../../../../../deps.ts";
 import {
   getship,
-} from "../../domain/ship/ship.repository.ts";
+} from "../../../../domain/user/planet/ship/ship.repository.ts";
 
 async function getShipsByPlanetId(req: Request, res: Response) {
   let planetID = req.params.planet_id;

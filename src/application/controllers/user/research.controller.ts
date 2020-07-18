@@ -1,7 +1,7 @@
-import { Request, Response } from "../../../deps.ts";
+import { Request, Response } from "../../../../deps.ts";
 import {
   getResearch,
-} from "../../domain/research/research.repository.ts";
+} from "../../../domain/user/research/repository.ts";
 
 async function getResearchByUserId(req: Request, res: Response) {
   let userID = req.params.user_id;

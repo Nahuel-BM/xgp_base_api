@@ -1,8 +1,8 @@
-import { DataBase } from "../../infrestructure/mysqlServices/abstractMysql.service.ts";
-import { Planet } from "../../domain/planet/planet.model.ts";
+import { DataBase } from "../../../infrestructure/mysqlServices/abstractMysql.service.ts";
+import { Planet } from "./model.ts";
 const db = DataBase.Instance.DBInstance;
 db.link([Planet]);
-await db.sync({ drop: false });
+
 
 async function getAllPlanetsByUserId(UserId: number) {
   let data = await Planet.where({ planet_user_id: UserId }).get();

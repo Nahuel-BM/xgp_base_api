@@ -5,7 +5,7 @@ import {
 
 import {
   getAllPlanetsIdByUserId,
-} from "../../domain/planet/planet.repository.ts";
+} from "../../domain/user/planet/repository.ts";
 
 async function validateOwnership(req: Request, res: Response) {
   let planetID = Number(req.params.planet_id);

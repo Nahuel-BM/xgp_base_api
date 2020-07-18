@@ -2,23 +2,23 @@ import { Router } from "../../../deps.ts";
 import {
   getPlanetsByUserId,
   getPlanetByUserIdAndPlanetId,
-} from "../controllers/planets.controller.ts";
+} from "../controllers/user/planets.controller.ts";
 
 import {
   getDefensesByUserIdAndPlanetId,
-} from "../controllers/defenses.controller.ts";
+} from "../controllers/user/planet/defenses.controller.ts";
 
 import {
   getResearchByUserId,
-} from "../controllers/research.controller.ts";
+} from "../controllers/user/research.controller.ts";
 
 import {
   getBuildingsByUserIdAndPlanetId,
-} from "../controllers/buildings.controller.ts";
+} from "../controllers/user/planet/buildings.controller.ts";
 
 import {
   getShipsByPlanetId,
-} from "../controllers/ships.controller.ts";
+} from "../controllers/user/planet/ships.controller.ts";
 
 import {
   validateToken,
@@ -28,6 +28,7 @@ import {
 import {
   validateOwnership,
 } from "../../infrestructure/middleware/ownership.middleware.ts";
+import { getSettingsByUserId } from "../controllers/user/settings.controller.ts";
 
 const router = new Router();
 
@@ -43,6 +44,13 @@ router.get(
   validateToken,
   validateUser,
   getResearchByUserId,
+);
+
+router.get(
+  "/:user_id/settings",
+  validateToken,
+  validateUser,
+  getSettingsByUserId,
 );
 
 router.get(

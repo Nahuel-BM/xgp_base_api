@@ -1,4 +1,4 @@
-import { validateJwt, makeJwt, setExpiration, Jose, Payload, Request, Response} from '../../../deps.ts';
+import { validateJwt, makeJwt, setExpiration, Jose, Payload, Request, Response} from '../../../../deps.ts';
 
 const key = "your-secret";
 const payload: Payload = {

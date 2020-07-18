@@ -1,7 +1,7 @@
-import { Request, Response } from "../../../deps.ts";
+import { Request, Response } from "../../../../../deps.ts";
 import {
   getDefense,
-} from "../../domain/defense/defense.repository.ts";
+} from "../../../../domain/user/planet/defense/defense.repository.ts";
 
 async function getDefensesByUserIdAndPlanetId(req: Request, res: Response) {
   let planetID = req.params.planet_id;

@@ -1,4 +1,4 @@
-import { Model, DataTypes } from "../../../deps.ts";
+import { Model, DataTypes } from "../../../../deps.ts";
 
 export class Planet extends Model {
   static table = "xgp_planets";
